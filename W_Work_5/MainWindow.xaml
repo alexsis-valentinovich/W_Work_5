@@ -1,0 +1,114 @@
+﻿<Window x:Class="W_Work_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:W_Work_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+
+        <TabControl>
+            <TabItem Header="Текст">
+                <Grid Background="Black">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ToolBarTray Grid.Row="0" Background="#FF5D5D5D">
+                        <ToolBar>
+                            <Menu Margin="3" Padding="3">
+                                <MenuItem Header="Фаил" >
+                                    <MenuItem Header="_Открыть" Click="MenuItem_Click"/>
+                                    <MenuItem Header="_Сохранить" Click="MenuItem_Click_1"/>
+                                    <Separator/>
+                                    <MenuItem Header="_Выход" Click="MenuItem_Click_2"/>
+                                </MenuItem>
+                            </Menu>
+                        </ToolBar>
+                        <ToolBar>
+                            <ComboBox  Width="120" Padding="3" Margin="3" SelectedIndex="0" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
+                                <TextBlock Text="Arial" />
+                                <TextBlock Text="Times New Roman" />
+                                <TextBlock Text="Verdana" />
+                            </ComboBox>
+                            <Separator Background="Black"/>
+                            <ComboBox  Width="40" Padding="3" Margin="3" SelectedIndex="0" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged_1">
+                                <TextBlock Text="12" />
+                                <TextBlock Text="14" />
+                                <TextBlock Text="16" />
+                            </ComboBox>
+                            <Separator Background="Black"/>
+                            <Button/>
+                            <Button BorderBrush="Black" Height="30" Width="30" Click="Button_Click" BorderThickness="1,1,1,1">
+                                <Image Source="Data/text_bold.png" Height="20" Width="20"/>
+                            </Button>
+                            <Separator/>
+                            <Button  BorderBrush="Black" Height="30" Width="30" Click="Button_Click_1">
+                            <Image Source = "Data/text_italic.png" Height="20" Width="20"/>
+                            </Button>
+                            <Separator/>
+                            <Button BorderBrush="Black" Height="30" Width="30" Click="Button_Click_2">
+                                <Image Source="Data/text_underline.png" Height="20" Width="20"/>
+                            </Button>
+                            <Separator  Background="Black" />
+                            <StackPanel VerticalAlignment="Center">
+                                <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"/>
+                                <RadioButton Content="Красный" Click="RadioButton_Click"/>
+                            </StackPanel>
+                        </ToolBar>
+                    </ToolBarTray>
+                    <TextBox x:Name="textBox" Grid.Row="1" Margin="5" Padding="5" TextWrapping="Wrap">
+                    </TextBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Рисунок">
+                <Grid Background="Black">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ToolBarTray Grid.Row="0" Background="#FF5D5D5D">
+                        <ToolBar>
+                            <Menu Margin="3" Padding="3">
+                                <MenuItem Header="Фаил" >
+                                    <MenuItem Header="_Открыть" Click="MenuItem_Click_3" />
+                                    <MenuItem Header="_Сохранить" Click="MenuItem_Click_4" />
+                                    <Separator/>
+                                    <MenuItem Header="_Выход" Click="MenuItem_Click_5" />
+                                </MenuItem>
+                            </Menu>
+                        </ToolBar>
+
+                        <ToolBar Width="450">
+                            <StackPanel x:Name="inkRadio"  Width="260"  VerticalAlignment="Center" HorizontalAlignment="Center" Orientation ="Horizontal" Margin="5">
+                                <RadioButton Width="80"  Content="_Рисовать" IsChecked="True" Click="RadioButton_Click_1"/>
+                                <Separator/>
+                                <RadioButton Width="105" Content="_Редактировать" Click="RadioButton_Click_2" />
+                                <Separator/>
+                                <RadioButton Width="80" Content="_Стереть" Click="RadioButton_Click_3" />
+                            </StackPanel>
+                            <Separator/>
+                            <ComboBox x:Name="comboColors"  Width="120" Padding="3" Margin="3" SelectedIndex="0" VerticalContentAlignment="Center" SelectionChanged="comboColors_SelectionChanged">
+                                <TextBlock Text="Черный" />
+                                <TextBlock Text="Зеленый" />
+                                <TextBlock Text="Красный" />
+                            </ComboBox>
+                        </ToolBar>
+
+                    </ToolBarTray>
+                    <InkCanvas x:Name="canvasMy" Grid.Row="1" Margin="5" Background="White" OpacityMask="#FFE62E2E"/>
+
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+
+
+
+
+
+
+</Window>
